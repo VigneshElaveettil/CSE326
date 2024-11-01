@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win University Website Design - Vignesh E</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+  
+
+<style>
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/int.png.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex:1;
+    text-align:right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font: size 13px;
+
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height:2px;
+    background: #f44336;
+    display: block;
+    margin:auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color:#fff
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+   border: 1px solid #f44336;
+   background: #f44336;
+   transition: 1s; 
+}
+
+nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top:0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color:#fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.course{
+    width:80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+@media(max-width:700px){
+    .row{
+        flex-direction: column;
+    }
+}
+.campus{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom:30px ;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226,0,0,0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+
+}
+.facilities{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+
+}
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonial-col p{
+    padding: 0;
+}
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+
+}
+.testimonial-col .fa{
+    color: #f44336;
+}
+@media(max-width: 700px){
+    .testimonial-col img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    margin-bottom: 40px;
+    color: #fff;
+    padding: 0;
+}
+@media(max-width:700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons .fa{
+    color: red;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color:#f44336;
+
+}
+</style>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index2.html"><img src="images/img69.png.png" width="300"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>WIN UNIVERSITY:WORLD'S BIGGEST UNIVERSITY</h1>
+            <br>
+            <br>
+            <h3>
+             At Win University, we strive to ignite the potential within each student,
+             paving the way for a brighter future.<br>Join us in our journey of excellence and innovation in education.
+            </h3>
+            <br>
+            <br>
+            <a href="" class="hero-btn">Visit us to know More</a>
+        </div>
+    </section>
+    <section class="course">
+        <h1>Courses we Offer</h1>
+        <p>Our diverse range of courses at Win University spans cutting-edge technology, creative arts,
+         business leadership, and much more. Empower your future with top-tier education that unlocks limitless potential.</p>
+
+         <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>
+                The Intermediate Course at Win Academy bridges foundational knowledge with advanced expertise, 
+                preparing students for higher education and career excellence. 
+                With a balanced curriculum, experienced faculty, and state-of-the-art facilities, 
+                our program equips learners with the skills they need to thrive in an ever-evolving world. 
+                Join us and take a transformative step towards your future.
+            </p>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>
+                Our Degree programs at Win Academy offer a robust curriculum with real-world applications. 
+                You'll gain in-depth knowledge and practical skills across various fields. Designed to cultivate leadership and expertise, 
+                our programs ensure graduates are well-prepared for professional success. 
+                Join us to build a solid foundation for your future. Your journey to greatness starts here
+                    
+                
+            </p>
+            </div>
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>
+                Our Post-Graduation programs at Win Academy offer specialized, 
+                advanced coursework and innovative research opportunities. 
+                You'll deepen your expertise in your chosen field, working closely with leading faculty members.
+                Designed to cultivate high-level critical thinking and professional skills, 
+                our programs prepare you to excel in a competitive landscape. 
+                Transform your potential into extraordinary accomplishments with us.
+               
+            </p>
+            </div>
+         </div>
+    </section>
+    <section class="campus">
+        <h1>Our Global Campus</h1>
+        <p>Win Academy’s Global Campus connects students worldwide for a truly international and immersive learning experience.</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="images/london.png">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="images/newyork.png">
+                <div class="layer">
+                    <h3>NEW YORK</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="images/washington.png">
+                <div class="layer">
+                    <h3>WASHINGTON</h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>Win Academy boasts state-of-the-art facilities, including cutting-edge labs, extensive libraries, 
+        and modern classrooms. Our sports complex and wellness centers promote physical health and well-being.
+         Students enjoy access to tech-driven innovation hubs and collaborative workspaces,
+         all designed to support their educational journey. Join us to experience a world-class learning environment.</p>
+         <div class="row">
+            <div class="facilities-col">
+                <img src="images/library.png">
+                <h3>World Class Library</h3>
+                <p>
+                    Our world-class library at Win Academy offers an extensive collection of books, journals, and digital resources.
+                     It is designed with modern study spaces and cutting-edge technology to support academic excellence.
+                     A true hub for knowledge and innovation.</p>
+
+            </div>
+            <div class="facilities-col">
+                <img src="images/basketball.png">
+                <h3>World Class Sport Facilities</h3>
+                <p>
+                    Win Academy's sports facilities are top-notch, featuring a modern gymnasium,
+                     expansive sports fields, and advanced fitness centers. Our indoor arenas cater to a variety of sports,
+                      while outdoor tracks and courts are perfect for training and competition.
+                       Students enjoy access to professional-grade equipment and dedicated coaching staff,
+                     promoting athletic excellence and well-being.
+                   </p>
+
+            </div>
+            <div class="facilities-col">
+                <img src="images/cafeteria.png">
+                <h3>Western style Cafeteria</h3>
+                <p>
+                    Our Western-style cafeteria at Win Academy offers a vibrant and cozy dining experience.
+                     With a menu that spans from classic burgers and fries to gourmet salads and international cuisines, there's something for every palate. The modern, open-plan layout encourages social interactions and collaborative gatherings,
+                     making it a favorite spot for students to relax and recharge between classes.
+                    </p>
+
+            </div>
+         </div>
+
+    </section>
+    <section class="testimonials">
+        <h1>What Our Students Says</h1>
+        <p>Welcome to our Student Reviews page, where the voices of Win Academy come to life.
+             Hear firsthand from our diverse community as they share their experiences and stories.
+              Discover what sets Win Academy apart through the eyes of those who live and breathe its vibrant campus life every day.
+             Their insights and reflections are a testament to our commitment to excellence and innovation.</p>
+            <div class="row">
+                <div class="testimonial-col">
+                    <img src="images/user1.jpg">
+                    <div>
+                        <p>
+                            As a student at Win Academy, I've found an incredible community and world-class resources that really set it apart.
+                            The diverse courses keep me engaged and continuously learning. The library is an absolute gem,
+                            filled with every resource I could dream of. And don't get me started on the sports facilities—they're top-notch and
+                            help me stay active and balanced. Plus, the Western-style cafeteria is perfect for grabbing a bite and catching up with friends.
+                            Win Academy truly makes me feel like I'm part of something extraordinary!
+                               <h3>Rizzywan</h3>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star-o" ></i>
+                               
+                        </p>
+                        
+                    </div>
+                    
+                </div>
+                <div class="testimonial-col">
+                    <img src="images/user2.jpg">
+                    <div>
+                        <p>
+                            You
+                            write another review
+                            Copilot
+                            Being a student at Win Academy has been an incredible journey.
+                             The programs are diverse and challenging, keeping me engaged and constantly learning new things.
+                              The library is a paradise for any book lover, packed with resources that support my studies and beyond.
+                               The sports facilities are fantastic, helping me balance my academic life with physical fitness.
+                             And the Western-style cafeteria is not just about great food but also a great place to meet friends and relax.
+                             Win Academy has truly exceeded my expectations in every way.
+                               <h3>Benher</h3>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star" ></i>
+                               <i class="fa fa-star-half-o" ></i>
+                        </p>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+    </section>
+
+
+    <section class="cta">
+        <h1>
+            Enroll for our various online courses <br> anywhere from the world
+        </h1>
+        <a href="" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>At Win Academy, we transform potential into achievement through education and innovation.
+             Our diverse programs and state-of-the-art facilities foster academic and personal growth.
+              Join our global community and experience unparalleled learning.
+             Win Academy: where education meets excellence.</p>
+             <div class="icons">
+                <i class="fa fa-facebook" ></i>
+                <i class="fa fa-twitter" ></i>
+                <i class="fa fa-instagram" ></i>
+                <i class="fa fa-linkedin" ></i>
+             </div>
+             <p>Made with <i class="fa fa-heart-o" > </i> by Vignesh (Visual studio's)</p>
+    </section>
+
+
+
+
+
+   
+    <script>
+        var navLinks=document.getElementById("navLinks");
+
+        function showmenu(){
+            navLinks.style.right="0";
+        }
+        function hidemenu(){
+            navLinks.style.right="-200px";
+        }
+
+    </script>
+
+</body>
+</html>
